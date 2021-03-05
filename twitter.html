@@ -10,36 +10,77 @@
 <body>
     <div id="container">
         <div class="bloco1">
-            <img src="./img/foto_fundo.png" alt="">
+            <img src="./img/foto_fundo.png" alt="" >
         </div>
-        <div class="bloco2">
-            <img src="./img/logo_twitter_branco.webp" alt="">
-            
-            <p>Acontecendo agora</p>
-            <p>Inscreva-se no Twitter hoje mesmo</p>
-            <button>Inscrever-se</button><br><br>
-            <button>Entrar</button>
-            
+        <div class="margem">
             <div>
+                <div class="bloco2">
+                    <img class="b2" src="./img/logo_twitter_branco.webp" alt="">
+                    
+                    <p class="p1">Acontecendo agora</p><br><br>
+                    <p class="p2">Inscreva-se no Twitter hoje mesmo</p><br>
+                    <button>Inscrever-se</button><br><br>
+                    <button>Entrar</button>
+                    
+                <div>
+        
+            </div>
 
+        </div>
+        
     </div>
     
 </body>
 </html>
 
 <style>
+*{
+    padding: 0;
+    margin: 0;
+}
 
 #container {	
                 background-color: black;
                 display: flex;
+                
                     
                 }
-.bloco1{   
+         
+          
+.bloco1 img{  
+    height: 100%;
     width: 100%;
-        
+    max-width: 500px;
+   
+   
+
 }
-.bloco2{
+.bloco2 button{
+   width: 375px;
+   height: 46px;
+   border-radius: 50px 50px;
+   
+}
+
+.p1{
     color: white;
+    font-size: 90px;
+}
+.p2{
+    color: white;
+    font-size: 40px;
+
+}
+
+.margem{
+    padding: 10px;
+    margin: 30px;
+}
+
+.b2{
+ height: 54.6px;
+ width:  62.57px;
+
 }
 
 
