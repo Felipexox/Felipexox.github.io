@@ -9,22 +9,22 @@
 </head>
 <body>
     <div id="container">
-        <div class="bloco1">
-            <img src="./img/foto_fundo.png" alt="" >
+        <div id="Frame">
+            <img src="./img/logo_twitter_branco.webp" >
         </div>
         <div class="margem">
+         
+            <div class="bloco2">
+                <img class="b2" src="./img/logo_twitter_branco.webp" alt="">
+                
+                <p class="p1">Acontecendo agora</p><br><br>
+                <p class="p2">Inscreva-se no Twitter hoje mesmo</p><br>
+                <button>Inscrever-se</button><br><br>
+                <button>Entrar</button>
+                
             <div>
-                <div class="bloco2">
-                    <img class="b2" src="./img/logo_twitter_branco.webp" alt="">
-                    
-                    <p class="p1">Acontecendo agora</p><br><br>
-                    <p class="p2">Inscreva-se no Twitter hoje mesmo</p><br>
-                    <button>Inscrever-se</button><br><br>
-                    <button>Entrar</button>
-                    
-                <div>
         
-            </div>
+            
 
         </div>
         
@@ -38,23 +38,35 @@
     padding: 0;
     margin: 0;
 }
-
+html, body {
+  height: 100%;
+}
 #container {	
-                background-color: black;
-                display: flex;
-                
-                    
-                }
+        background-color: black;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        }
          
           
-.bloco1 img{  
-    height: 100%;
+#Frame
+{
     width: 100%;
-    max-width: 500px;
-   
-   
-
+    height: 100%;
+    background: url('./img/foto_fundo.png') ;
+    background-position: center;
+    background-size: cover; 
+    text-align: center;
 }
+#Frame img
+{
+    object-fit: none;
+
+    width: 100%;
+    height: 100%;
+    
+}
+
 .bloco2 button{
    width: 375px;
    height: 46px;
