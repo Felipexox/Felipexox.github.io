@@ -6,7 +6,7 @@ html, body {
   height: 100%;
 }
 #container {	
-    background-color: pink;
+    background-color: black;
     display: table;
     height: 100%;
     width: 100%;
@@ -15,31 +15,38 @@ html, body {
 #Bloco1
 {
     display: table-footer-group;
-    width: 100%;
-    height: 100%;
+
     background: url('../img/foto_fundo.png') ;
     background-position: center;
     background-size: cover; 
     text-align: center;
 }
-div { display: inline-block; }
-
 
 
 #Bloco1 img
 {
-    object-fit: none;
-    width: 100%;
-    height: 100%;
+    object-fit: cover;
+
 }
 
 #Bloco2 {
-    width: 100%;
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    margin: 30px;
+    width: 100%;
+}
+#Bloco2 #Center{
+    width: 500px;      
 }
 
+
 #Bloco2 button{
+    margin: 0;
+    position: relative;
+    top: 10px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
    width: 375px;
    height: 46px;
    border-radius: 50px 50px;
@@ -49,11 +56,12 @@ div { display: inline-block; }
 .p1{
     color: white;
     font-size: 90px;
+    text-align: left;
 }
 .p2{
     color: white;
     font-size: 40px;
-
+    text-align:center;
 }
 
 .b2{
