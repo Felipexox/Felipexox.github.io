@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="./css/widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="./css/smallscreen.css">
     <title>Twitter. É o que está acontecendo / Twitter</title>
     <link rel="icon" href="./img/fav_twitter.png">
 </head>
 <body>
     <div id="container">
-        <div id="Frame">
+        <div id="Bloco1">
             <img src="./img/logo_twitter_branco.webp" >
         </div>
-        <div class="margem">
-         
-            <div class="bloco2">
+        <div id="Bloco2">
+
                 <img class="b2" src="./img/logo_twitter_branco.webp" alt="">
                 
                 <p class="p1">Acontecendo agora</p><br><br>
                 <p class="p2">Inscreva-se no Twitter hoje mesmo</p><br>
                 <button>Inscrever-se</button><br><br>
                 <button>Entrar</button>
-                
-            <div>
-        
-            
 
         </div>
         
@@ -33,70 +30,4 @@
 </body>
 </html>
 
-<style>
-*{
-    padding: 0;
-    margin: 0;
-}
-html, body {
-  height: 100%;
-}
-#container {	
-    background-color: black;
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
 
-#Frame
-{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background: url('./img/foto_fundo.png') ;
-    background-position: center;
-    background-size: cover; 
-    text-align: center;
-}
-div { display: inline-block; }
-
-
-
-#Frame img
-{
-    object-fit: none;
-    width: 100%;
-    height: 100%;
-}
-
-.bloco2 button{
-   width: 375px;
-   height: 46px;
-   border-radius: 50px 50px;
-   
-}
-
-.p1{
-    color: white;
-    font-size: 90px;
-}
-.p2{
-    color: white;
-    font-size: 40px;
-
-}
-
-.margem{
-    width: 100%;
-    padding: 10px;
-    margin: 30px;
-}
-
-.b2{
- height: 54.6px;
- width:  62.57px;
-
-}
-
-
-</style>
