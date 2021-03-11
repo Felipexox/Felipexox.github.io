@@ -20,7 +20,6 @@ html, body {
     background-position: center;
     background-size: cover; 
     text-align: center;
- 
 }
 
 
@@ -42,6 +41,7 @@ html, body {
 #Bloco2 {
     display: flex;
     justify-content: center;
+    min-height: 415px;
 }
 #Bloco2 #Center{
     width: 505px;
@@ -55,13 +55,13 @@ html, body {
 }
 
 #Bloco2 #btn-layout button{
- 
+    
     top: 35px;
     left: 50%;
-
-   width: 250px;
-   height: 46px;
-   border-radius: 50px 50px;
+    
+    width: 250px;
+    height: 46px;
+    border-radius: 50px 50px;
    
 }
 #Bloco2 #button1{

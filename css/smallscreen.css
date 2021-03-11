@@ -42,21 +42,22 @@ html, body {
 #Bloco2 {
     display: flex;
     justify-content: center;
+    min-height: 430px;
 }
 #Bloco2 #Center{
-    width: 380px;
+    width: 395px;
     margin-top: 25px;
 }
 #Bloco2 #btn-layout{
-    width: 375px;
+    width: 415px;
  }
  #Bloco2 #btn-layout button{
  
-    top: 35px;
+    top: 25px;
     left: 50%;
 
-   width: 380px;
-   height: 46px;
+   width: 415px;
+   height: 52px;
    border-radius: 50px 50px;
    
 }

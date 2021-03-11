@@ -84,9 +84,7 @@ html, body {
 }
 #Footer div
 {
-    display: flex;
-    justify-content: center;
-    vertical-align: center;
+
     width: 100%;
     position: relative;
     top: 25%;
