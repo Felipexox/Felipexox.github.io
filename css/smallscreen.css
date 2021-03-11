@@ -19,12 +19,14 @@ html, body {
     background-position: center;
     background-size: cover; 
     text-align: center;
+ 
 }
 
 
 #Bloco1 img
 {
     background-size: cover;
+  
 }
 
 #Bloco2 {
@@ -80,6 +82,7 @@ html, body {
     color: white;
     font-size: 90px;
     text-align: left;
+    font-family: Verdana,sans-serif;
 }
 .p2{
     color: white;
