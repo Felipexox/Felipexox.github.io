@@ -4,73 +4,85 @@
 }
 html, body {
   height: 100%;
+  background-color: black;
 }
-
 #container {	
     background-color: black;
-    display: flex;
-    height: 100%;
+    display: table;
+    height: 90%;
     width: 100%;
 }
 
 #Bloco1
 {
-    width: 100%;
-    height: 100%;
+    display: table-footer-group;
     background: url('../img/foto_fundo.png') ;
     background-position: center;
     background-size: cover; 
+    text-align: center;
+ 
 }
 
 
 #Bloco1 img
 {
-    object-fit: none;
-    width: 100%;
-    height: 100%;
+    background-size: cover;
+  
 }
-
-#Center{
-    margin-top: 175px;
+#Center .b2{
+    margin-bottom: 5px;
 }
-
 #Center .p1{
-    margin-top: 25px;
-    margin-bottom: 10px;
+   margin-left: 5px;
 }
 #Center .p2{
-    margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 #Bloco2 {
-    min-width: 550px;
-    width: 80%;
-    padding: 10px;
-    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+#Bloco2 #Center{
+    width: 505px;
+    margin-top: 25px;
+    display: table;
 }
 
 #Bloco2 #btn-layout{
-    width: 375px;
- }
 
-#Bloco2 #button1{
-   width: 375px;
-   height: 46px;
-   margin-bottom: 20px;
-   border-radius: 50px 50px;
-   color: white;
-   font-weight: bold;
-   background-color: #1A91DA;
+   width: 505px;
 }
-#Bloco2 #button2{
-    width: 375px;
-    height: 46px;
+
+#Bloco2 #btn-layout button{
+ 
+    top: 35px;
+    left: 50%;
+
+   width: 250px;
+   height: 46px;
+   border-radius: 50px 50px;
+   
+}
+#Bloco2 #button1{
+    width: 425px;
+    height: 50px;
     border-radius: 50px 50px;
-    background-color: black;
-    color: #1A91DA;
+    font-size: 15px;
+    color: white;
     font-weight: bold;
-    border-color: #1A91DA;
+    background-color: #1A91DA;
  }
+ #Bloco2 #button2{
+    width: 425px;
+     height: 50px;
+     font-size: 15px;
+     border-radius: 50px 50px;
+     background-color: black;
+     color: #1A91DA;
+     font-weight: bold;
+     border-color: #1A91DA;
+  }
 #Footer{
     display: flex;
     width: 100%;
@@ -101,17 +113,17 @@ html, body {
 
 .p1{
     color: white;
-    font-size: 60px;
+    font-size: 70px;
+    text-align: left;
     font-weight: bold;
     font-family: "Roboto";
-
-    
 }
 .p2{
     color: white;
+    font-size: 25px;
+    text-align: left;
+    font-weight: bold;
     font-family: "Roboto";
-    font-size: 35px;
-
 }
 
 .b2{

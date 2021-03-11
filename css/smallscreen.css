@@ -4,6 +4,7 @@
 }
 html, body {
   height: 100%;
+  background-color: black;
 }
 #container {	
     background-color: black;
@@ -43,12 +44,25 @@ html, body {
     justify-content: center;
 }
 #Bloco2 #Center{
+    width: 380px;
     margin-top: 25px;
 }
+#Bloco2 #btn-layout{
+    width: 375px;
+ }
+ #Bloco2 #btn-layout button{
+ 
+    top: 35px;
+    left: 50%;
 
-
+   width: 380px;
+   height: 46px;
+   border-radius: 50px 50px;
+   
+}
 #Bloco2 button{
     margin: 0;
+    margin: 10px;
     position: relative;
     top: 35px;
     left: 50%;
