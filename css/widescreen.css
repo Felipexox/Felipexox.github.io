@@ -32,7 +32,11 @@ html, body {
 }
 
 #Center{
-    
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #Center .p1{
@@ -45,9 +49,8 @@ html, body {
 
 #Bloco2 {
     min-width: 550px;
-    width: 80%;
-    padding: 10px;
-    margin: 30px;
+    width: 50%;
+    margin-left: 30px;
 }
 
 #Bloco2 #btn-layout{
