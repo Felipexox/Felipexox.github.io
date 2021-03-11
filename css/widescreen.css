@@ -4,19 +4,20 @@
 }
 html, body {
   height: 100%;
+  background-color: black;
 }
 
 #container {	
     background-color: black;
     display: flex;
-    height: 100%;
+    height: 95%;
     width: 100%;
 }
 
 #Bloco1
 {
     width: 60%;
-    height: 90%;
+    height: 100%;
     background: url('../img/foto_fundo.png') ;
     background-position: center;
     background-size: cover; 
@@ -76,17 +77,19 @@ html, body {
     border-color: #1A91DA;
  }
 #Footer{
-    display: flex;
+   
+    height: 5%;
     width: 100%;
-    height: 50px;
     background-color: black;
-    justify-content: center;
 }
 #Footer div
 {
-    margin-top: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    width: 100%;
+    position: relative;
+    top: 25%;
 }
 #Footer div a{
     margin-left: 7px;
