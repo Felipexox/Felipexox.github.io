@@ -5,6 +5,7 @@
 html, body {
   height: 100%;
 }
+
 #container {	
     background-color: black;
     display: flex;
@@ -72,13 +73,17 @@ html, body {
     color: white;
     text-decoration:underline;
 }
+
 .p1{
     color: white;
     font-size: 90px;
+    font-family: "Roboto";
+
     
 }
 .p2{
     color: white;
+    font-family: "Roboto";
     font-size: 40px;
 
 }
