@@ -78,6 +78,7 @@ html, body {
     width: 425px;
     height: 50px;
     border-radius: 50px 50px;
+    border:none;
     font-size: 15px;
     color: white;
     font-weight: bold;
