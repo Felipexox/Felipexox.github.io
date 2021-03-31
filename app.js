@@ -1,20 +1,32 @@
-var nomePokemon = document.querySelector("#nomePokemon").value;
-var conteudo = document.querySelector("#Bloco2");
+var nomePokemonCampo = document.querySelector("#nomePokemon");
+var conteudo = document.querySelector("#pokemon-div");
+var botao = document.querySelector("#submitPokemon");
 
-function busca(){
+botao.addEventListener("click",busca)
 
+function busca(event){
+      event.preventDefault();
+      var nomePokemon = nomePokemonCampo.value;
       axios.get(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
       .then(res => {
         if(res.data.erro){
           throw new Error('Nao existe esse pokemon')
         }
       
-        content.innerHTML = ''
+        conteudo.innerHTML = ''
+        
+        createLine(name + res.data.game_indices[3].game_index)
         createLine(res.data.name)
-        createLine(res.data.type)
+        createLine(res.data.types[0].type.name)
+        createLine(res.data.abilities[0].ability.name)
+
+        
+       
+      
+
       })
       .catch(err => {
-        content.innerHTML = ''
+        conteudo.innerHTML = ''
         createLine('ERRO!')
       })
       
