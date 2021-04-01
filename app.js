@@ -1,7 +1,7 @@
 var nomePokemonCampo = document.querySelector("#nomePokemon");
 var conteudo = document.querySelector("#pokemon-div");
 var botao = document.querySelector("#submitPokemon");
-
+var img = document.getElementById("imgPokemon");
 botao.addEventListener("click",busca)
 
 function busca(event){
@@ -15,19 +15,23 @@ function busca(event){
       
         conteudo.innerHTML = ''
         
-        createLine(name + res.data.game_indices[3].game_index)
+       
+
+        
+        createLine(res.data.game_indices[3].game_index)
         createLine(res.data.name)
         createLine(res.data.types[0].type.name)
         createLine(res.data.abilities[0].ability.name)
-
-        
+        img.setAttribute("src",(res.data.sprites.front_default))
        
       
 
       })
       .catch(err => {
         conteudo.innerHTML = ''
+     
         createLine('ERRO!')
+        img.setAttribute("#")
       })
       
       
