@@ -18,14 +18,14 @@
         <div id="Login-Content">
             <div id="Center"></div>
                 <img class="b2" id="center-img" src="./img/logo_twitter_branco.webp" alt="">
-                <p class="p1" id="center-text" >Registrar</p><br><br>
+                <p class="p1" id="center-text">Registrar</p><br><br>
             
                 <div id="btn-layout"  class="center-container">
-                    <input id="input"></input>
-                    <input id="input" type="password"></input>
+                    <input id="input-email" class = "input"></input>
+                    <input id="input-pwd" class = "input" type="password"></input>
                     <button  id="button2" class="center-container">Registrar</button>
-               
-                    <a href="https://about.twitter.com" class="center-container">Entrar</a>
+                    <a href="./login.html" class="center-container">Entrar</a>
+                    <a id="error-message" class="center-container"></a>
                 </div>
             </div>           
         </div> 
@@ -55,7 +55,7 @@
     </div>   
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
+    <script src="register.js"></script>
 </body>
 
 </html>
