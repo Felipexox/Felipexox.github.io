@@ -12,6 +12,11 @@ var storedPassword = localStorage.getItem('password')
 email.value = storedEmail
 password.value = storedPassword
 
+if(localStorage.getItem('token')){
+  
+  window.location.href = "./home.html";
+}
+
 sign_up_btn.addEventListener('click', (event) => {
   event.preventDefault()
 

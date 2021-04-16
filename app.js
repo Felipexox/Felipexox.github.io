@@ -1,8 +1,19 @@
 var nomePokemonCampo = document.querySelector("#nomePokemon");
 var conteudo = document.querySelector("#pokemon-div");
+var logout = document.querySelector("#logout");
 var botao = document.querySelector("#submitPokemon");
 var img = document.getElementById("imgPokemon");
 botao.addEventListener("click",busca)
+
+if(!localStorage.getItem('token')){
+  
+  window.location.href = "./index.html";
+}
+
+logout.addEventListener('click', () => {
+  localStorage.setItem('token', "");
+  window.location.href = "./index.html";
+})
 
 function busca(event){
       event.preventDefault();

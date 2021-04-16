@@ -12,22 +12,28 @@ var storedPassword = localStorage.getItem('password')
 email.value = storedEmail
 password.value = storedPassword
 
+if(localStorage.getItem('token')){
+  
+  window.location.href = "./home.html";
+}
 
 sign_in_btn.addEventListener('click', () => {
     axios.post(`https://reqres.in/api/login`,  
      {
         email: email.value,
         password: password.value
-      }
+     }
     )
       .then(res => {
-        if(res.data.erro){
-          throw new Error('Error')
-        }
-        console.log(password.value)
+
+       localStorage.setItem('token', res.data.token)
+       window.location.href = "./home.html";
+        
+        console.log(JSON.stringify(res.data.token))
+        
       })
       .catch(err => {      
-        showErrorMessage('ERRO!')
+        showErrorMessage(JSON.stringify(err))
       })
 })
 
