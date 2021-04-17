@@ -201,3 +201,21 @@ html, body {
 #error-message{
     color: red;
 }
+
+#pokemon_list{
+    height: 200px;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th{
+    color: white;
+}
+td{
+    color: white;
+}
+label {
+    color: white;
+}
