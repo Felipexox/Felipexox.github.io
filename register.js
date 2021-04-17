@@ -34,13 +34,13 @@ sign_up_btn.addEventListener('click', (event) => {
         localStorage.setItem('email', email.value)
         localStorage.setItem('password', password.value)
 
-        localStorage.setItem('token', res.response.data.token)
+        localStorage.setItem('token', res.data.token)
 
         window.location.href = "./login.html";
         console.log(password.value)
       })
       .catch(err => {      
-        showErrorMessage(err.response.data.error.toString())
+        showErrorMessage(err.message)
       })
   } else{
     showErrorMessage("Erro: Algum campo possui menos que 3 caracteres")
