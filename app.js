@@ -50,7 +50,7 @@ function busca(event){
 }
 function listPokemons(){
   
-  axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=200`)
+  axios.get(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=200`)
   .then(res => {
     showPokemonList(res.data.results)
   })

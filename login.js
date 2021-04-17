@@ -33,7 +33,7 @@ sign_in_btn.addEventListener('click', () => {
         
       })
       .catch(err => {      
-        showErrorMessage(JSON.stringify(err))
+        showErrorMessage(err.message)
       })
 })
 
