@@ -172,7 +172,7 @@ html, body {
     
 }
 
-#input{
+.input{
     width: 375px;
     height: 46px;
     margin-bottom: 20px;
@@ -196,4 +196,26 @@ html, body {
     text-decoration:none; 
     display: table;
     margin: 0 auto;
+}
+
+#error-message{
+    color: red;
+}
+
+#pokemon_list{
+    height: 200px;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th{
+    color: white;
+}
+td{
+    color: white;
+}
+label {
+    color: white;
 }
