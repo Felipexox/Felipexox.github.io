@@ -7,22 +7,32 @@ botao.addEventListener("click",busca)
 function busca(event){
       event.preventDefault();
       var nomePokemon = nomePokemonCampo.value;
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
+      for(aux=1;aux<150;aux++){
+       axios.get(`https://pokeapi.co/api/v2/pokemon/${aux}`) 
       .then(res => {
         if(res.data.erro){
           throw new Error('Nao existe esse pokemon')
         }
       
-        conteudo.innerHTML = ''
-        
-       
-
-        
+       conteudo.innerHTML = ''
+          
+       if (res.data.name.indexOf(nomePokemon) == 0){
         createLine(res.data.game_indices[3].game_index)
         createLine(res.data.name)
         createLine(res.data.types[0].type.name)
         createLine(res.data.abilities[0].ability.name)
         img.setAttribute("src",(res.data.sprites.front_default))
+
+        }
+
+        
+          
+        
+        
+
+
+        
+        
        
       
 
@@ -31,11 +41,11 @@ function busca(event){
         conteudo.innerHTML = ''
      
         createLine('ERRO!')
-        img.setAttribute("#")
+        
       })
       
       
-      
+    }
 
 }
 
