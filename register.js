@@ -6,11 +6,6 @@ const error_message = document.querySelector('#error-message')
 var email = document.querySelector("#input-email");
 var password = document.querySelector("#input-pwd");
 
-var storedEmail = localStorage.getItem('email')
-var storedPassword = localStorage.getItem('password')
-
-email.value = storedEmail
-password.value = storedPassword
 
 if(localStorage.getItem('token')){
   
@@ -30,10 +25,6 @@ sign_up_btn.addEventListener('click', (event) => {
       }
     )
       .then(res => {
-
-        localStorage.setItem('email', email.value)
-        localStorage.setItem('password', password.value)
-
         localStorage.setItem('token', res.data.token)
 
         window.location.href = "./login.html";

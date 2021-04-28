@@ -38,8 +38,6 @@ function busca(event){
 
         img.setAttribute("src",(res.data.sprites.front_default))
        
-      
-
       })
       .catch(err => {
         conteudo.innerHTML = ''

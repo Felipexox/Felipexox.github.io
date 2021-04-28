@@ -6,12 +6,6 @@ const error_message = document.querySelector('#error-message')
 var email = document.querySelector("#input-email");
 var password = document.querySelector("#input-pwd");
 
-var storedEmail = localStorage.getItem('email')
-var storedPassword = localStorage.getItem('password')
-
-email.value = storedEmail
-password.value = storedPassword
-
 if(localStorage.getItem('token')){
   
   window.location.href = "./home.html";
