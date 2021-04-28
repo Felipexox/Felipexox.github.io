@@ -6,18 +6,15 @@ const error_message = document.querySelector('#error-message')
 var email = document.querySelector("#input-email");
 var password = document.querySelector("#input-pwd");
 
-var storedEmail = localStorage.getItem('email')
-var storedPassword = localStorage.getItem('password')
-
-email.value = storedEmail
-password.value = storedPassword
-
 if(localStorage.getItem('token')){
   
   window.location.href = "./home.html";
 }
 
 sign_in_btn.addEventListener('click', () => {
+  
+  if(email.value.length > 3 && password.value.length > 3 && validateEmail(email.value)){
+
     axios.post(`https://reqres.in/api/login`,  
      {
         email: email.value,
@@ -35,8 +32,16 @@ sign_in_btn.addEventListener('click', () => {
       .catch(err => {      
         showErrorMessage(err.message)
       })
+    }else{
+      showErrorMessage("Erro: Dados Invalidos")
+    }
 })
 
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
 
 function showErrorMessage(value){
 
