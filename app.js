@@ -1,4 +1,4 @@
-var nomePokemonCampo = document.querySelector("#nomePokemon");
+var nomePokemonCampo = document.querySelector("#tipoPokemon");
 var conteudo = document.querySelector("#pokemon-div");
 var logout = document.querySelector("#logout");
 var botao = document.querySelector("#submitPokemon");
@@ -29,34 +29,41 @@ logout.addEventListener('click', () => {
 
 var pokemonList = [];
 
+const types = ["fire", "water", "normal", "fighting", "poison", "ground", "rock", "bug", "ghost"];
+
 listPokemons();
 clearTable();
 function busca(event){
       event.preventDefault();
-      var nomePokemon = nomePokemonCampo.value;
+      var tipoPokemon = nomePokemonCampo.value;
       
-      if(nomePokemon.length > 0){
+      if(tipoPokemon.length > 0){
           clearTable();
-
-          for(let i = 0; i < pokemonList.length; i++){
-            if(pokemonList[i].name.startsWith(nomePokemon)){
-
-
-                axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonList[i].name}`)
-                .then(res => {
-                  console.log("RESPONSE");
-                  addRowToTable(res);
-                  
-                })
-                .catch(err => {
-                  // conteudo.innerHTML = ''
-              
-                  showErrorMessage('ERRO: Pokemon não encontrado!')
-                  // img.setAttribute("#")
-                })
-
+          for(let i = 0; i < types.length; i++){
+            if(types[i].startsWith(tipoPokemon)){
+              tipoPokemon = types[i];
+              break;
             }
-          }        
+          }
+
+          axios.get(`https://pokeapi.co/api/v2/type/${tipoPokemon}`)
+          .then(res => {
+            console.log("RESPONSE");
+            for(let i = 0; i < res.data.pokemon.length; i++){
+              addRowToTable(res.data.pokemon[i].pokemon.name, tipoPokemon, i);
+              
+            }
+            
+          })
+          .catch(err => {
+            // conteudo.innerHTML = ''
+        
+            showErrorMessage('ERRO: Pokemon não encontrado!')
+            // img.setAttribute("#")
+          })
+
+            
+            
       }else{
         showErrorMessage('ERRO: O Campo não pode ser vazio!')
       }
@@ -84,34 +91,23 @@ function createTableHeader(){
   var indexCell = row.insertCell(0);
   var nameCell = row.insertCell(1);
   var typeCell = row.insertCell(2);
-  var abilityCell = row.insertCell(3);
-  var imageCell = row.insertCell(4);
 
   indexCell.innerHTML = "Index";
   nameCell.innerHTML = "Name";
   typeCell.innerHTML = "Type";
-  abilityCell.innerHTML = "Ability";
-  imageCell.innerHTML = "Image";
 }
-function addRowToTable(res){
-  var row = pokemonTable.insertRow(pokemonTable.childElementCount);
+function addRowToTable(pokemon, type, index){
+  var row = pokemonTable.insertRow(index + 1);
 
   var indexCell = row.insertCell(0);
   var nameCell = row.insertCell(1);
   var typeCell = row.insertCell(2);
-  var abilityCell = row.insertCell(3);
-  var imageCell = row.insertCell(4);
-
-  indexCell.innerHTML = res.data.game_indices[3].game_index;
-  nameCell.innerHTML = res.data.name;
-  typeCell.innerHTML = res.data.types[0].type.name;
-  abilityCell.innerHTML = res.data.abilities[0].ability.name;
 
 
-  var img = document.createElement('img');
-  img.src = "link to image here";
-  imageCell.appendChild(img);
-  img.setAttribute("src",(res.data.sprites.front_default))
+  indexCell.innerHTML = index;
+  nameCell.innerHTML = pokemon;
+  typeCell.innerHTML = type;
+
 }
 function createLine(valor){
   let linha = document.createElement("p");
