@@ -12,6 +12,9 @@ if(localStorage.getItem('token')){
 }
 
 sign_in_btn.addEventListener('click', () => {
+  
+  if(email.value.length > 3 && password.value.length > 3 && validateEmail(email.value)){
+
     axios.post(`https://reqres.in/api/login`,  
      {
         email: email.value,
@@ -29,8 +32,16 @@ sign_in_btn.addEventListener('click', () => {
       .catch(err => {      
         showErrorMessage(err.message)
       })
+    }else{
+      showErrorMessage("Erro: Dados Invalidos")
+    }
 })
 
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
 
 function showErrorMessage(value){
 
