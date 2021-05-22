@@ -223,3 +223,14 @@ td{
 label {
     color: white;
 }
+#leftbox {
+    float:left; 
+    width:50%;
+    height:280px;
+}
+
+#rightbox{
+    float:right;
+    width:50%;
+    height:280px;
+}
