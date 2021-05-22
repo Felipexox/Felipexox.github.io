@@ -190,6 +190,9 @@ html, body {
 #error-message{
     color: red;
 }
+#message{
+    color: white;
+}
 
 #pokemon_list{
     height: 200px;
@@ -207,4 +210,15 @@ td{
 }
 label {
     color: white;
+}
+#leftbox {
+    float:left; 
+    width:50%;
+    height:280px;
+}
+
+#rightbox{
+    float:right;
+    width:50%;
+    height:280px;
 }

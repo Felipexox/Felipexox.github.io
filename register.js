@@ -17,7 +17,7 @@ sign_up_btn.addEventListener('click', (event) => {
   if(email.value.length > 3 && password.value.length > 3 && validateEmail(email.value)){
 
     showErrorMessage(" ");
-    axios.post(`https://reqres.in/api/register`,  
+    axios.post("https://twitter-express-backend.herokuapp.com/register", 
      {
         email: email.value,
         password: password.value

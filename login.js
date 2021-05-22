@@ -15,19 +15,22 @@ sign_in_btn.addEventListener('click', () => {
   
   if(email.value.length > 3 && password.value.length > 3 && validateEmail(email.value)){
 
-    axios.post(`https://reqres.in/api/login`,  
+    axios.post(`https://twitter-express-backend.herokuapp.com/login`, 
      {
         email: email.value,
         password: password.value
      }
     )
       .then(res => {
-
-       localStorage.setItem('token', res.data.token)
-       window.location.href = "./home.html";
-        
-        console.log(JSON.stringify(res.data.token))
-        
+        console.log(JSON.stringify(res.data))
+        if(res.data.token){
+          localStorage.setItem('token', res.data.token)
+          window.location.href = "./home.html";
+            
+          console.log(JSON.stringify(res.data.token))
+        }else{
+          showErrorMessage("Erro: Dados Invalidos")
+        }
       })
       .catch(err => {      
         showErrorMessage(err.message)
