@@ -1,5 +1,6 @@
 var title = document.querySelector("#postTitle");
 var desc = document.querySelector("#postDesc");
+var fileBase64 = "";
 var logout = document.querySelector("#logout");
 var submit = document.querySelector("#submitPost");
 
@@ -29,8 +30,38 @@ logout.addEventListener('click', () => {
 
 var pokemonList = [];
 
-clearTable();
 
+
+clearTable();
+function getBase64(file) {
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    fileBase64 = reader.result;
+  };
+  reader.onerror = function (error) {
+    console.log('Error: ', error);
+  };
+}
+
+function previewFile() {
+  var preview = document.querySelector('#preview');
+  var file    = document.querySelector('input[type=file]').files[0];
+  getBase64(file);
+  var reader  = new FileReader();
+
+  reader.onloadend = function () {
+
+    preview.src = reader.result;
+
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
 function insertPost(event){
   event.preventDefault();
   clearMessages();
@@ -43,7 +74,8 @@ function insertPost(event){
     let index = 0;
     axios.post(`https://twitter-express-backend.herokuapp.com/posts/register`,{
       title: titleValue,
-      desc: descValue
+      desc: descValue,
+      image: fileBase64
     })
     .then(res => {
       console.log("RESPONSE " + JSON.stringify(res.data));
@@ -76,11 +108,9 @@ function busca(event){
           let index = 0;
           axios.get(`https://twitter-express-backend.herokuapp.com/posts`)
           .then(res => {
-            console.log("RESPONSE " + JSON.stringify(res.data));
             for(let i = 0; i < res.data.length; i++){
-              console.log(res.data[i].title + " start with " + searchValue)
               if(res.data[i].title.startsWith(searchValue)){
-                addRowToTable(res.data[i].title, res.data[i].description, index);
+                addRowToTable(res.data[i].title, res.data[i].description, res.data[i].image, index);
                 index ++;
               }
       
@@ -112,24 +142,33 @@ function createTableHeader(){
   var indexCell = row.insertCell(0);
   var titleCell = row.insertCell(1);
   var description = row.insertCell(2);
+  var imageCell = row.insertCell(3);
 
   indexCell.innerHTML = "Index";
   titleCell.innerHTML = "Title";
   description.innerHTML = "Description";
+  imageCell.innerHTML = "Image";
 }
-function addRowToTable(post, type, index){
+function addRowToTable(post, type, imageBase64, index){
   var row = contentTable.insertRow(index + 1);
 
   var indexCell = row.insertCell(0);
   var titleCell = row.insertCell(1);
   var description = row.insertCell(2);
+  var imageCell = row.insertCell(3);
 
+  if(imageBase64){
+    var image = new Image();
+    image.src = imageBase64;//'data:image/png;base64,iVBORw0K...';
 
+    imageCell.appendChild(image);
+  }
   indexCell.innerHTML = index;
   titleCell.innerHTML = post;
   description.innerHTML = type;
 
 }
+
 function createLine(valor){
   let linha = document.createElement("p");
   let texto = document.createTextNode(valor);
