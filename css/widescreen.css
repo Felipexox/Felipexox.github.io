@@ -201,6 +201,10 @@ html, body {
 #error-message{
     color: red;
 }
+#message{
+    color: white;
+}
+
 
 #pokemon_list{
     height: 200px;
