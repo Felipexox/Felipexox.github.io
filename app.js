@@ -13,12 +13,6 @@ var contentTable = document.getElementById("contentTable");
 const error_message = document.querySelector('#error-message')
 const message = document.querySelector('#message')
 
-const gameIndex = document.querySelector("#game-index")
-const name = document.querySelector("#name")
-const type = document.querySelector("#type")
-const abilityName = document.querySelector("#ability-name")
-
-const pokemon_list = document.querySelector('#pokemon-list')
 
 submit.addEventListener("click",insertPost)
 submitSearch.addEventListener("click",busca)
@@ -60,7 +54,7 @@ function insertPost(event){
     .catch(err => {
       // conteudo.innerHTML = ''
   
-      showErrorMessage('ERRO: Pokemon não encontrado!')
+      showErrorMessage('ERRO: Title não encontrado!')
       // img.setAttribute("#")
     })
 
@@ -96,7 +90,7 @@ function busca(event){
           .catch(err => {
             // conteudo.innerHTML = ''
         
-            showErrorMessage('ERRO: Pokemon não encontrado!')
+            showErrorMessage('ERRO: post não encontrado!')
             // img.setAttribute("#")
           })
 
@@ -116,24 +110,24 @@ function clearTable(){
 function createTableHeader(){
   var row = contentTable.insertRow(contentTable.childElementCount);
   var indexCell = row.insertCell(0);
-  var nameCell = row.insertCell(1);
-  var typeCell = row.insertCell(2);
+  var titleCell = row.insertCell(1);
+  var description = row.insertCell(2);
 
   indexCell.innerHTML = "Index";
-  nameCell.innerHTML = "Name";
-  typeCell.innerHTML = "Type";
+  titleCell.innerHTML = "Title";
+  description.innerHTML = "Description";
 }
-function addRowToTable(pokemon, type, index){
+function addRowToTable(post, type, index){
   var row = contentTable.insertRow(index + 1);
 
   var indexCell = row.insertCell(0);
-  var nameCell = row.insertCell(1);
-  var typeCell = row.insertCell(2);
+  var titleCell = row.insertCell(1);
+  var description = row.insertCell(2);
 
 
   indexCell.innerHTML = index;
-  nameCell.innerHTML = pokemon;
-  typeCell.innerHTML = type;
+  titleCell.innerHTML = post;
+  description.innerHTML = type;
 
 }
 function createLine(valor){
