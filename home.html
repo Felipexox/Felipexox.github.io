@@ -27,8 +27,10 @@
                             <input id="postTitle" type="text" id="fname" name="fname" value=""><br>
                             <label for="dname">Description:</label><br>
                             <input id="postDesc" type="text" id="dname" name="dname" value=""><br>
+                            <input type="file" id="img" name="img" accept="image/*" onchange="previewFile();">
                             <input id="submitPost"type="submit">
                         </form>
+                        <img id="preview" src="#" alt="image" height="200"/>
                 </div>
                 <div id="rightbox">
                     <form >
